@@ -1,0 +1,35 @@
+{
+  "name": "balzzak-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "next": "^9.4.4",
+    "antd": "^4.2.5"
+  },
+  "devDependencies": {
+    "webpack": "^4.43.0",
+    "eslint": "^7.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-react-hooks": "^4.0.4",
+    "eslint-plugin-react": "^7.20.0",
+    "nodemon": "^2.0.4"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bal-zzak/balzzak-client.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bal-zzak/balzzak-client/issues"
+  },
+  "homepage": "https://github.com/bal-zzak/balzzak-client#readme"
+}
