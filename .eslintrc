@@ -1,0 +1,21 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 2019,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true // eslint에게 jsx허용
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": [
+    "enlint:recommended",
+    "plugin:react/recommended"
+  ],
+  "plugins": [
+    "import",
+    "react-hooks"
+  ]
+}
