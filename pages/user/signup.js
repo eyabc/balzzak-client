@@ -1,7 +1,5 @@
-import React, {useState, useCallback} from 'react';
-import AppLayout from '../../components/AppLayout';
-import Head from "next/head";
-import {Form, Input, Checkbox, Button} from 'antd';
+import React, { useState, useCallback } from 'react';
+import { Form, Input, Checkbox, Button } from 'antd';
 
 const Signup = () => {
     const useInput = (initialValue = null) => {
@@ -44,15 +42,9 @@ const Signup = () => {
 
     return (
         <>
-            <Head>
-                <title>발짝</title>
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/4.2.5/antd.compact.css"/>
-            </Head>
-            <AppLayout>
-                <div>
-                    <h1>회원가입</h1>
-                </div>
-            </AppLayout>
+            <div>
+                <h1>회원가입</h1>
+            </div>
             <Form  onFinish={onFinish}>
                 <div>
                     <label htmlFor={'user-id'}>아이디</label><br/>
