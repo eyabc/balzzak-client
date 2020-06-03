@@ -1,9 +1,9 @@
 import React from 'react';
 import {Form, Input, Menu, Button, Row, Col, Card, Avatar} from "antd";
-import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
-import LoginForm from "./LoginForm";
-import Link from 'next/link';
 import PropTypes from 'prop-types';
+import Link from 'next/link';
+import LoginForm from "./LoginForm";
+import UserProfile from "./UserProfile";
 
 const dummy = {
     name: "박종열",
@@ -26,24 +26,13 @@ const AppLayout = ({ children }) => {
             <Row gutter={20}>
                 <Col xs={24} md={6}>
                     {dummy.isLoggedIn ?
-                        <Card actions={[
-                            <SettingOutlined key="setting"/>,
-                            <EditOutlined key="edit"/>,
-                            <EllipsisOutlined key="ellipsis"/>,
-                        ]}>
-                            <Card.Meta
-                                avatar={<Avatar
-                                    src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"/>}
-                                title={dummy.name}
-                                description="This is the description"/>
-                        </Card>
+                        <UserProfile/>
                         :
                         <LoginForm/>
                     }
                 </Col>
                 <Col xs={24} md={12}> {children}</Col>
                 <Col xs={24} md={6}></Col>
-
             </Row>
         </div>
     )

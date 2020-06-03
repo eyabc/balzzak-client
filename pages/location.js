@@ -40,10 +40,8 @@ const Location = () => {
     return (
         <>
             <Row>
-                <script type="text/javascript"
-                        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3e6d8c51fb99bd08d987aa93656b7541&libraries=services,clusterer,drawing"></script>
+                <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3e6d8c51fb99bd08d987aa93656b7541&libraries=services,clusterer,drawing"/>
                 <div id={"map"} style={{width: '100vw', height: '50vh', padding: '10px'}}>
-                    about
                 </div>
             </Row>
         </>
