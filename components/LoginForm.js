@@ -13,7 +13,7 @@ const LoginForm = () => {
 
     return (
         <>
-            <Form name="normal_login" onFinish={onFinish}>
+            <Form name="normal_login" onFinish={onFinish} style={{padding: '10px'}}>
                 <div>
                     <label htmlFor={'user-id'}>아이디</label><br/>
                     <Input name={'user-id'} value={id} required onChange={onChangeId} prefix={<UserOutlined className="site-form-item-icon"/>}/>
