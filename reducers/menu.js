@@ -1,5 +1,12 @@
 const initialState = {
-    menu: [],
+    menu: [{
+        user: {
+            id: 1,
+            nickname: "jongyeol",
+        },
+        content: "안녕하세요",
+        img: "https://www.woowahan.com/img/pc/main-fonts-img.png",
+    }],
 }
 
 // 타입
