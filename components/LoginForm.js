@@ -2,13 +2,17 @@ import React from 'react';
 import { Form, Input,  Button, Checkbox } from "antd";
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import useInput from "../hooks/useInputState";
+import {useDispatch} from "react-redux";
+import { loginAction } from '../reducers/user';
 
 const LoginForm = () => {
     const [id, onChangeId] = useInput('');
     const [password, onChangePassword] = useInput('');
+    const dispatch = useDispatch();
 
     const onFinish = values => {
         console.log('Received values of form: ', id, password);
+        dispatch(loginAction);
     };
 
     return (

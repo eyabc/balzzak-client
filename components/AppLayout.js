@@ -1,17 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {Form, Input, Menu, Button, Row, Col, Card, Avatar} from "antd";
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import LoginForm from "./LoginForm";
 import UserProfile from "./UserProfile";
-
-const dummy = {
-    name: "박종열",
-    post: ["1", "2", "3"],
-    isLoggedIn: false,
-}
+import { useSelector } from "react-redux";
 
 const AppLayout = ({ children }) => {
+    const { isLoggedIn } = useSelector(state => state.user);
     return (
         <div>
             <Menu mode={"horizontal"}>
@@ -25,7 +21,7 @@ const AppLayout = ({ children }) => {
             <Button><Link href={"/user/signup"}><a>회원가입</a></Link></Button>
             <Row gutter={20}>
                 <Col xs={24} md={6}>
-                    {dummy.isLoggedIn ?
+                    {isLoggedIn ?
                         <UserProfile/>
                         :
                         <LoginForm/>

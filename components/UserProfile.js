@@ -1,14 +1,19 @@
-import React from "react";
-import {Avatar, Card, Col} from "antd";
+import React, { useCallback } from "react";
+import { Avatar, Card } from "antd";
 import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
-
-const dummy = {
-    name: "박종열",
-    post: ["1", "2", "3"],
-    isLoggedIn: false,
-}
+import { useDispatch, useSelector } from "react-redux";
+import { logoutAction } from '../reducers/user';
 
 const UserProfile = () => {
+    const dispatch = useDispatch();
+    const { nickname } = useSelector(state => state.user);
+
+    // 자식 컴포넌트에 프롭스로 전달할때는 항상 useCallback으로 감싼다.
+    // 자식컴포넌트에서 새로운 함수를 생성한다고 받아들이기 때문에 렌더링이 실행되기 때문
+    const onLogout = useCallback( () => {
+        dispatch(logoutAction);
+    }, []);
+
     return (
         <Card actions={[
             <SettingOutlined key="setting"/>,
@@ -18,8 +23,10 @@ const UserProfile = () => {
             <Card.Meta
                 avatar={<Avatar
                     src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"/>}
-                title={dummy.name}
-                description="This is the description"/>
+                title={nickname}
+                description="This is the description"
+            />
+            <button onClick={onLogout}>로그아웃</button>
         </Card>
     )
 }
