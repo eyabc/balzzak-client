@@ -9,26 +9,30 @@ const initialState = {
     }
 };
 
-export const LOG_IN = 'LOG_IN';
-export const LOG_OUT = 'LOG_OUT';
+export const REGISTER_SUCCESS = 'REGISTER_SUCCESS'
+export const REGISTER_FAIL = 'REGISTER_FAIL'
+export const LOGIN = 'LOGIN';
+export const LOGOUT = 'LOGOUT';
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+export const LOGIN_FAIL = 'LOGIN_FAIL';
 
 export const loginAction = {
-    type: LOG_IN,
+    type: LOGIN,
 }
 
 export const logoutAction = {
-    type: LOG_OUT,
+    type: LOGOUT,
 }
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case LOG_IN:
+        case LOGIN:
             return {
                 ...state,
                 isLoggedIn: true,
                 user: dummyUser,
             }
-        case LOG_OUT:
+        case LOGOUT:
             return {
                 ...state,
                 isLoggedIn: false,

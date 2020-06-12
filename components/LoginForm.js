@@ -5,6 +5,7 @@ import useInput from "../hooks/useInputState";
 import {useDispatch} from "react-redux";
 import { loginAction } from '../reducers/user';
 
+// form은 redux state보다 react state쓰는게 더 편하다.
 const LoginForm = () => {
     const [id, onChangeId] = useInput('');
     const [password, onChangePassword] = useInput('');
