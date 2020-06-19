@@ -1,11 +1,9 @@
 import React from 'react';
 
-const Menu = () => {
-    return (
-        <div>
-            about
-        </div>
-    )
-}
+const Menu = () => (
+  <div>
+    about
+  </div>
+);
 
 export default Menu;

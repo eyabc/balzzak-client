@@ -1,35 +1,37 @@
 const initialState = {
-    menu: [{
-        user: {
-            id: 1,
-            nickname: "jongyeol",
-        },
-        content: "안녕하세요",
-        img: "https://www.woowahan.com/img/pc/main-fonts-img.png",
-    }],
-}
+  menu: [{
+    user: {
+      id: 1,
+      nickname: 'jongyeol',
+    },
+    content: '안녕하세요',
+    img: 'https://www.woowahan.com/img/pc/main-fonts-img.png',
+  }],
+};
 
 // 타입
 const ADD_MENU = 'ADD_POST';
+// eslint-disable-next-line no-unused-vars
 const ADD_DUMMY = 'ADD_DUMMY';
 
 // 액션
+// eslint-disable-next-line no-unused-vars
 const addMenu = {
-    type: ADD_MENU,
-}
+  type: ADD_MENU,
+};
 
 const reducer = (state = initialState, action) => {
-    switch (action.type) {
-        case ADD_MENU: {
-            return {
-                ...state,
-            }
-        }
-        default: {
-            return {
-                ...state
-            }
-        }
+  switch (action.type) {
+    case ADD_MENU: {
+      return {
+        ...state,
+      };
     }
-}
+    default: {
+      return {
+        ...state,
+      };
+    }
+  }
+};
 export default reducer;
