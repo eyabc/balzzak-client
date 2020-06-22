@@ -1,22 +1,23 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import {
   Form, Input, Button,
 } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import useInput from '../hooks/useInputState';
-import { loginAction } from '../reducers/user';
+import { loginRequestAction } from '../reducers/user';
 
 // form은 redux state보다 react state쓰는게 더 편하다.
 const LoginForm = () => {
   const [id, onChangeId] = useInput('');
   const [password, onChangePassword] = useInput('');
+  const { loggingIn } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
-  const onFinish = (values) => {
+  const onFinish = useCallback(() => {
     console.log('Received values of form: ', id, password);
-    dispatch(loginAction);
-  };
+    dispatch(loginRequestAction({ id, password }));
+  }, [id, password]);
 
   return (
     <>
@@ -34,7 +35,7 @@ const LoginForm = () => {
           {/* <Checkbox name='user-term' onChange={onChangeTerm}/> 로그인 유지 하시겠습니까? */}
         </div>
         <div style={{ marginTop: 10 }}>
-          <Button type="primary" htmlType="submit" className="login-form-button">로그인하기</Button>
+          <Button type="primary" htmlType="submit" loading={loggingIn} className="login-form-button">로그인하기</Button>
         </div>
       </Form>
     </>

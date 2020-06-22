@@ -1,5 +1,5 @@
 import {
-  all, fork, put, takeEvery, take, call,
+  all, fork, put, takeEvery, take, call, delay,
 } from 'redux-saga/effects';
 import axios from 'axios';
 import {
@@ -16,7 +16,8 @@ function loginAPI() {
 // call 동기 _ api요청에서 주로 사용
 function* login() {
   try {
-    yield call(loginAPI);
+    // yield call(loginAPI);
+    yield delay(2000);
     yield put({
       type: LOGIN_SUCCESS,
     });
@@ -47,7 +48,9 @@ function signUpApi() {
 
 function* signUp() {
   try {
-    yield call(signUpApi);
+    //yield call(signUpApi);
+    yield delay(2000);
+    throw new Error('에러에러');
     yield put({
       type: SIGNUP_SUCCESS,
     });
@@ -55,6 +58,7 @@ function* signUp() {
     console.error(e);
     yield put({
       type: SIGNUP_FAIL,
+      error: e,
     });
   }
 }

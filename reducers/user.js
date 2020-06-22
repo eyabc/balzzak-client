@@ -1,5 +1,5 @@
 const dummyUser = {
-  me: '박종열',
+  nickname: '박종열',
 };
 
 const initialState = {
@@ -32,39 +32,65 @@ export const SIGNUP_REQUEST = 'SIGNUP_REQUEST';
 export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS';
 export const SIGNUP_FAIL = 'SIGNUP_FAIL';
 
-export const loginAction = {
+export const loginRequestAction = (data) => ({
   type: LOGIN_REQUEST,
-};
+  data,
+});
 
-export const logoutAction = { type: LOGOUT_REQUEST };
+export const signUpRequestAction = (data) => ({
+  type: SIGNUP_REQUEST,
+  data,
+});
+
+export const logoutRequestAction = { type: LOGOUT_REQUEST };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case LOGIN_REQUEST:
       return {
         ...state,
-        loading: true,
+        loggingIn: true,
       };
     case LOGIN_SUCCESS:
       return {
         ...state,
         isLoggedIn: true,
         me: dummyUser,
-        loading: false,
+        loggingIn: false,
       };
     case LOGIN_FAIL:
       return {
         ...state,
         isLoggedIn: false,
-        loading: false,
+        loggingIn: false,
         me: null,
       };
     case LOGOUT_REQUEST:
       return {
         ...state,
-        loading: false,
+        loggingIn: false,
         isLoggedIn: false,
         me: null,
+      };
+    case SIGNUP_REQUEST:
+      return {
+        ...state,
+        signedUp: false,
+        isSigningUp: true,
+        signUpErrorReason: '',
+      };
+    case SIGNUP_SUCCESS:
+      return {
+        ...state,
+        signedUp: true,
+        isSigningUp: false,
+      };
+    case SIGNUP_FAIL:
+      return {
+        ...state,
+        signedUp: false,
+        isSigningUp: false,
+        signUpErrorReason: action.error,
       };
     default:
       return {
