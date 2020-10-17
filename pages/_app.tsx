@@ -26,6 +26,7 @@ Balzzak.prototypes = {
   Component: PropTypes.elementType.isRequired, // myComponent
   store: PropTypes.object.isRequired,
 };
+
 const sagaMiddleware = createSagaMiddleware();
 
 // 발짝에 store을 넣어주는 higher order component.

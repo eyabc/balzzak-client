@@ -10,13 +10,13 @@ const HELLO_SAGA = 'HELLO_SAGA';
 
 // 로그인
 function loginAPI() {
-
+  //비동기
 }
 
 // call 동기 _ api요청에서 주로 사용
 function* login() {
   try {
-    // yield call(loginAPI);
+    yield call(loginAPI);
     yield delay(2000);
     yield put({
       type: LOGIN_SUCCESS,
@@ -48,7 +48,7 @@ function signUpApi() {
 
 function* signUp() {
   try {
-    //yield call(signUpApi);
+    // yield call(signUpApi);
     yield delay(2000);
     throw new Error('에러에러');
     yield put({
