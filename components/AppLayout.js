@@ -1,44 +1,65 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
-  Form, Input, Menu, Button, Row, Col, Card, Avatar,
+  Layout, Menu,
 } from 'antd';
-import PropTypes from 'prop-types';
 import Link from 'next/link';
-import { useSelector } from 'react-redux';
-import LoginForm from './LoginForm';
-import UserProfile from './UserProfile';
+
+const logoImage = 'images/logo_color.png';
+const { Header, Footer, Content } = Layout;
 
 const AppLayout = ({ children }) => {
-  const { isLoggedIn } = useSelector((state) => state.user);
   return (
-    <div>
-      <Menu mode="horizontal">
-        <Menu.Item key="home"><Link href="/"><a>발짝</a></Link></Menu.Item>
-        <Menu.Item key="menu"><Link href="/menu"><a>메뉴소개</a></Link></Menu.Item>
-        <Menu.Item key="location"><Link href="/location"><a>오시는길</a></Link></Menu.Item>
-        <Menu.Item key="mail">
-          <Input.Search enterButton style={{ verticalAlign: 'middle' }} />
-        </Menu.Item>
-      </Menu>
-      <Button><Link href="/user/signup"><a>회원가입</a></Link></Button>
-      <Row gutter={20}>
-        <Col xs={24} md={6}>
-          {isLoggedIn
-            ? <UserProfile />
-            : <LoginForm />}
-        </Col>
-        <Col xs={24} md={12}>
-          {' '}
+    <>
+      <Layout
+        style={{
+          width: 1240,
+          margin: '0px auto',
+          overflow: 'auto',
+          left: 0,
+        }}
+      >
+        <Header
+          style={{
+            height: 100,
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            background: 'none',
+            padding: 0,
+          }}
+        >
+          <div>
+            <Link href="/">
+              <img
+                src={logoImage}
+                alt="logo"
+                style={{
+                  width: 200,
+                  cursor: 'pointer',
+                }}
+              />
+            </Link>
+          </div>
+          <Menu
+            mode="horizontal"
+            style={{
+              background: 'none',
+            }}
+          >
+            <Menu.Item key="menu"><Link href="/menu">메뉴소개</Link></Menu.Item>
+            <Menu.Item key="location"><Link href="/location">매장정보</Link></Menu.Item>
+            <Menu.Item key="2"><Link href="/2">이벤트 및 제휴</Link></Menu.Item>
+            <Menu.Item key="3"><Link href="/3">창업 안내</Link></Menu.Item>
+            <Menu.Item key="4"><Link href="/4">고객의 소리</Link></Menu.Item>
+          </Menu>
+        </Header>
+        <Content>
           {children}
-        </Col>
-        <Col xs={24} md={6} />
-      </Row>
-    </div>
+        </Content>
+        <Footer>footer</Footer>
+      </Layout>
+    </>
   );
-};
-
-AppLayout.prototypes = {
-  children: PropTypes.node,
 };
 
 export default AppLayout;
