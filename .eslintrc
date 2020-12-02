@@ -15,6 +15,14 @@
   "extends": [
     "airbnb"
   ],
+  "rules": {
+    "react/prop-types": ["off"],                   // 프롭타입 정의 안되도 사용 가능
+    "jsx-a11y/anchor-is-valid": ["off"],           // a태그 활용 안해도 사용 가능
+    "no-unused-vars": ["off"],                     // 사용하지 않는 변수있어도 되게끔
+    "react/jsx-filename-extension": ["off"],       // 파일이름이 js여도 jsx 문법 사용 가능하게끔
+    "no-underscore-dangle": ["off"],               // 언더스코어 변수 허용 가능하게끔
+    "linebreak-style": 0                           // 개행 오류 무시(lf, crlf)
+  },
   "plugins": [
     "import",
     "react-hooks"
