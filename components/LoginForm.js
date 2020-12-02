@@ -25,11 +25,11 @@ const LoginForm = () => {
         <div>
           <label htmlFor="user-id">아이디</label>
           <br />
-          <Input name="user-id" value={id} required onChange={onChangeId} prefix={<UserOutlined className="site-form-item-icon" />} />
+          <Input id="user-id" name="user-id" value={id} required onChange={onChangeId} prefix={<UserOutlined className="site-form-item-icon" />} />
         </div>
         <div>
           <label htmlFor="user-password">비밀번호</label>
-          <Input name="user-password" type="password" value={password} required onChange={onChangePassword} prefix={<LockOutlined className="site-form-item-icon" />} />
+          <Input id="user-password" name="user-password" type="password" value={password} required onChange={onChangePassword} prefix={<LockOutlined className="site-form-item-icon" />} />
         </div>
         <div>
           {/* <Checkbox name='user-term' onChange={onChangeTerm}/> 로그인 유지 하시겠습니까? */}
