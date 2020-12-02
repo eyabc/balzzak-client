@@ -54,4 +54,3 @@ const MapContents = styled.div`
 `;
 
 export default MapContent;
-//
