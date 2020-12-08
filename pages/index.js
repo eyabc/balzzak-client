@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import Slide from '../components/home/Slide';
-import About from '../components/home/About';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -20,7 +19,6 @@ const Home = () => {
   return (
     <>
         <Slide />
-        <About />
     </>
   );
 };
