@@ -45,7 +45,7 @@ class MapContent extends Component {
   }
 
   render() {
-    return <MapContents id="Mymap" style={{ width: '90vh', height: '50vh' }} />;
+    return <MapContents id="Mymap" style={{ width: '60vh', height: '50vh' }} />;
   }
 }
 const MapContents = styled.div`
