@@ -32,12 +32,8 @@ const sagaMiddleware = createSagaMiddleware();
 // 발짝에 store을 넣어주는 higher order component.
 export default withRedux((initialState, options) => {
   const middleware = [sagaMiddleware];
-  const enhancer = process.env.NODE_ENV === 'production'
-    ? compose(applyMiddleware(...middleware)) // 여러개의 미들웨어를 합성
-    : compose(applyMiddleware(...middleware),
-      typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION__ !== 'undefined'
-        ? window.__REDUX_DEVTOOLS_EXTENSION__() // 리덕스 devtools 확장 프로그램에서 사용할 수 있는 함수
-        : (f) => f);
+  const enhancer = compose(applyMiddleware(...middleware)) // 여러개의 미들웨어를 합성
+  
 
   const store = createStore(reducer, initialState, enhancer); // store만들때 적용
   sagaMiddleware.run(rootSaga);
