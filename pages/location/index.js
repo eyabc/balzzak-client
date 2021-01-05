@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Row, Col } from 'antd';
 import LocationTap from './tab';
 import MapContent from './location';
+import LocationSearch from './locationSearch';
 
 const Location = () => {
   return (
@@ -14,7 +15,10 @@ const Location = () => {
       <Row>
         <Col span={8}>
           <LocationTap />
-          <div style={{ border: '1px solid black', height: '600px' }}>임시 정보</div>
+          <div style={{ border: '1px solid black', height: '600px' }}>
+            <LocationSearch />
+            임시 정보
+          </div>
         </Col>
         <Col span={10}>
           <MapContent />
