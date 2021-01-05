@@ -1,5 +1,5 @@
 import React from "react";
-import styled from 'styled-components';
+import styled from "@emotion/styled";
 const mainSlide01 = '../images/main_slide01.png';
 
 import {
@@ -53,7 +53,7 @@ const SlideDim = styled.div`
 
 const Slide = () => {
   return (
-    <Carousel autoplay>
+    <Carousel autoplay style={{ marginTop: -100 }}>
       <div>
         <MainSlide>
           <SlideText>
