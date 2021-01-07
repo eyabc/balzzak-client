@@ -31,7 +31,7 @@ const AppLayout = ({ children }) => (
         <div
           style={{
             display: 'flex',
-            maxWidth: 1240,
+            maxWidth: 1140,
             height: 100,
             margin: '0 auto',
             justifyContent: 'space-between',
