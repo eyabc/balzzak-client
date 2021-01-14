@@ -47,70 +47,65 @@ const SlideDim = styled.div`
 const Slide = () => {
   return (
     <Carousel autoplay style={{ marginTop: -100 }}>
-      <div>
-        <MainSlide>
-          <SlideText>
-            <SlideTopTitle>
-                {'프렌차이즈에는'}
-                <br/>
-                {'없는특별한 감성!'}
-            </SlideTopTitle>
-            <SlideContent>
-                {'발짝은 한번 머물고 가는 곳이 아닌, 사람들과 추억을 만들고, 그 추억이 이야기가 되는 공간입니다.'}
-                <br/>
-                {'찾아와 주시는 모든 분들이 편하고 안락하게 즐길 수 있도록 정성껏 대접하는 포차가 되겠습니다.'}
-            </SlideContent>
-          </SlideText>
-          <MainImg
-            src={mainSlide01}
-            alt="slide1"
-          />
-          <SlideDim/>
-        </MainSlide>
-      </div>
-      <div>
-        <MainSlide>
-          <SlideText>
-            <SlideTopTitle>
-                {'가성비 갑!'}
-                <br/>
-                {'저렴한 안주!'}
-            </SlideTopTitle>
-            <SlideContent>
-                {'222222222222'}
-                <br/>
-                {'222222222222222'}
-            </SlideContent>
-          </SlideText>
-          <MainImg
-            src={mainSlide01}
-            alt="slide1"
-          />
-          <SlideDim/>
-        </MainSlide>
-      </div>
+      <MainSlide>
+        <SlideText>
+          <SlideTopTitle>
+              {'프렌차이즈에는'}
+              <br/>
+              {'없는특별한 감성!'}
+          </SlideTopTitle>
+          <SlideContent>
+              {'발짝은 한번 머물고 가는 곳이 아닌, 사람들과 추억을 만들고, 그 추억이 이야기가 되는 공간입니다.'}
+              <br/>
+              {'찾아와 주시는 모든 분들이 편하고 안락하게 즐길 수 있도록 정성껏 대접하는 포차가 되겠습니다.'}
+          </SlideContent>
+        </SlideText>
+        <MainImg
+          src={mainSlide01}
+          alt="slide1"
+        />
+        <SlideDim/>
+      </MainSlide>
 
-      <div>
-        <MainSlide>
-          <SlideText>
-            <SlideTopTitle>
-                {'전수창업문의'}
-                <br/>
-                {'상생하는 발짝!'}
-            </SlideTopTitle>
-            <SlideContent>
-                {'3333333333333'}
-                <br/>
-                {'3333333333333'}
-            </SlideContent>
-          </SlideText>
-          <MainImg
-            src={mainSlide01}
-            alt="slide1"
-          />
-          <SlideDim/>
-        </MainSlide>
-      </div>
+      <MainSlide>
+        <SlideText>
+          <SlideTopTitle>
+              {'가성비 갑!'}
+              <br/>
+              {'저렴한 안주!'}
+          </SlideTopTitle>
+          <SlideContent>
+              {'222222222222'}
+              <br/>
+              {'222222222222222'}
+          </SlideContent>
+        </SlideText>
+        <MainImg
+          src={mainSlide01}
+          alt="slide1"
+        />
+        <SlideDim/>
+      </MainSlide>
+      
+      <MainSlide>
+        <SlideText>
+          <SlideTopTitle>
+              {'전수창업문의'}
+              <br/>
+              {'상생하는 발짝!'}
+          </SlideTopTitle>
+          <SlideContent>
+              {'3333333333333'}
+              <br/>
+              {'3333333333333'}
+          </SlideContent>
+        </SlideText>
+        <MainImg
+          src={mainSlide01}
+          alt="slide1"
+        />
+        <SlideDim/>
+      </MainSlide>
     </Carousel>
   );
 };
