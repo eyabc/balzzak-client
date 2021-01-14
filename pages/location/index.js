@@ -12,7 +12,7 @@ const Location = () => {
           홈 > 매장정보
         </div>
       </Row>
-      <Row>
+      <Row justify="center">
         <Col span={8}>
           <LocationTap />
           <div style={{ border: '1px solid black', height: '600px' }}>

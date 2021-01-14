@@ -31,7 +31,7 @@ const AppLayout = ({ children }) => (
         <div
           style={{
             display: 'flex',
-            width: 1240,
+            maxWidth: 1140,
             height: 100,
             margin: '0 auto',
             justifyContent: 'space-between',
@@ -64,11 +64,7 @@ const AppLayout = ({ children }) => (
           </Menu>
         </div>
       </Header>
-      <Content
-        style = {{
-          marginTop: -100,
-        }}
-      >
+      <Content>
         {children}
       </Content>
       <Footer>footer</Footer>

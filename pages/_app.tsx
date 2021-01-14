@@ -34,7 +34,6 @@ export default withRedux((initialState, options) => {
   const middleware = [sagaMiddleware];
   const enhancer = compose(applyMiddleware(...middleware)) // 여러개의 미들웨어를 합성
 
-
   const store = createStore(reducer, initialState, enhancer); // store만들때 적용
   sagaMiddleware.run(rootSaga);
   return store;

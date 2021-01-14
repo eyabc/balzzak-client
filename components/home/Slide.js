@@ -1,22 +1,18 @@
 import React from "react";
-import styled from 'styled-components';
-const mainSlide01 = '../images/main_slide01.png';
+import styled from "@emotion/styled";
+import { Carousel } from 'antd';
 
-import {
-  Carousel,
-} from 'antd';
+const mainSlide01 = '../images/main_slide01.png';
 
 const MainSlide = styled.div`
   position: relative;
 `;
-
 const SlideText = styled.div`
   position: relative;
   z-index: 2;
-  width: 1240px;
+  width: 1140px;
   margin: 0 auto;
-`;  
-
+`;
 const SlideTopTitle = styled.h3`
   position: absolute;
   top: 263px;
@@ -26,7 +22,6 @@ const SlideTopTitle = styled.h3`
   line-height: 1.15;
   font-weight: 100;
 `;
-
 const SlideContent = styled.p`
   position: absolute;
   top: 291px;
@@ -36,11 +31,9 @@ const SlideContent = styled.p`
   line-height: 1.15;
   font-weight: 100;
 `;
-
 const MainImg = styled.img`
   width: 100%;
 `;
-
 const SlideDim = styled.div`
   position: absolute;
   top: 0;
@@ -53,7 +46,7 @@ const SlideDim = styled.div`
 
 const Slide = () => {
   return (
-    <Carousel autoplay>
+    <Carousel autoplay style={{ marginTop: -100 }}>
       <div>
         <MainSlide>
           <SlideText>
