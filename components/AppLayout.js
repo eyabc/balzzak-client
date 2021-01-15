@@ -6,6 +6,10 @@ import Link from 'next/link';
 const logoImage = 'images/balzzak_logo.png';
 const { Header, Footer, Content } = Layout;
 
+const BREAK_POINT_MOBILE = 768;
+const BREAK_POINT_TABLET = 992;
+const BREAK_POINT_PC = 1200;
+
 const StyledHeader = styled(Header)` 
   position: relative;
   z-index: 1;
@@ -13,6 +17,14 @@ const StyledHeader = styled(Header)`
   height: auto;
   border-bottom: 1px solid #fff;
   background: none;
+`;
+const HeaderRow = styled(Row)`
+  display: flex;
+  max-width: 1140px;
+  height: 100px;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: flex-end;
 `;
 const StyledMenu = styled('ul')`
   display: flex;
@@ -27,8 +39,14 @@ const MenuItem = styled('li')`
 
   & > a {
     color: #fff;
-    font-size: 20px;
+    font-size: 13px;
     background: rgba(255, 255, 255, .2);
+  }
+
+  @media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
+    & > a {
+      font-size: 17px;
+    }
   }
 `;
 
@@ -40,16 +58,7 @@ const AppLayout = ({ children }) => (
       }}
     >
       <StyledHeader>
-        <Row
-          style={{
-            display: 'flex',
-            maxWidth: 1140,
-            height: 100,
-            margin: '0 auto',
-            justifyContent: 'space-between',
-            alignItems: 'flex-end',
-          }}
-        >
+        <HeaderRow>
           <Col span={4}>
             <Link href="/">
                 <img
@@ -73,7 +82,7 @@ const AppLayout = ({ children }) => (
                 <MenuItem><Link href="/5">커뮤니티</Link></MenuItem>
             </StyledMenu>
           </Col>
-        </Row>
+        </HeaderRow>
       </StyledHeader>
       <Content>
         {children}
