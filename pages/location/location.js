@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled from "@emotion/styled";
+
+const MapContents = styled.div`
+  width: 100%;
+  height: 100%;
+`
 
 /* global kakao */
 class MapContent extends Component {
@@ -45,12 +50,8 @@ class MapContent extends Component {
   }
 
   render() {
-    return <MapContents id="Mymap" style={{ width: '90vh', height: '50vh' }} />;
+    return <MapContents id="Mymap" />;
   }
 }
-const MapContents = styled.div`
-  width: 100%;
-  height: 100%;
-`;
 
 export default MapContent;
