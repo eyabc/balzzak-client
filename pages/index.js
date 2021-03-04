@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import Slide from '../components/home/Slide';
 import About from '../components/home/About';
+import SNSTag from '../components/home/SNSTag';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -21,6 +22,7 @@ const Home = () => {
     <>
         <Slide />
         <About />
+        <SNSTag />
     </>
   );
 };
